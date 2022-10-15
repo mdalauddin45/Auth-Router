@@ -21,6 +21,9 @@ const Header = () => {
         <Link to="home" className="btn btn-ghost normal-case text-xl">
           Home
         </Link>
+        <Link to="orders" className="btn btn-ghost normal-case text-xl">
+          Order
+        </Link>
 
         <Link to="register" className="btn btn-ghost normal-case text-xl">
           Register
