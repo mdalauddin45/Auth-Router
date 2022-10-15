@@ -1,7 +1,7 @@
-import React, { Children } from "react";
+import React from "react";
 import { createContext } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const UserContext = ({ Children }) => {
   const user = { displyName: "Akash" };
