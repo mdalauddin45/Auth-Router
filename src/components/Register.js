@@ -76,6 +76,7 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <button className="btn btn-success">Google</button>
           </div>
         </div>
       </div>
