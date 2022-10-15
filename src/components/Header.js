@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/UserContext";
 
 const Header = () => {
-  const abc = useContext(AuthContext);
-  console.log("context", abc);
+  const { user } = useContext(AuthContext);
+  console.log("context", user);
   return (
     <div>
       <div className="navbar bg-primary text-primary-content ">
@@ -20,6 +20,7 @@ const Header = () => {
         <Link to="register" className="btn btn-ghost normal-case text-xl">
           Register
         </Link>
+        {user?.displayName && <span>Welcome, {user.displayName}</span>}
       </div>
     </div>
   );
