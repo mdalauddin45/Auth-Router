@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../Hook/UserContext";
+import { AuthContext } from "../contexts/UserContext";
 
 const Header = () => {
   const abc = useContext(AuthContext);
