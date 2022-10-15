@@ -1,10 +1,17 @@
+import { Result } from "postcss";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/UserContext";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   // console.log("context", user);
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   return (
     <div>
       <div className="navbar bg-primary text-primary-content ">
@@ -21,7 +28,9 @@ const Header = () => {
           Register
         </Link>
         {user?.email && <span>Welcome, {user.email}</span>}
-        <button className="btn btn-secondary ">log out</button>
+        <button onClick={handleSignOut} className="btn btn-secondary ">
+          log out
+        </button>
       </div>
     </div>
   );
