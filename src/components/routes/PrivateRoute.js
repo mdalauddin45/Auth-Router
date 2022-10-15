@@ -9,11 +9,7 @@ const PrivateRoute = () => {
   if (user && user.uid) {
     return Children;
   }
-  return (
-    <div>
-      <Navigate to="/login"></Navigate>
-    </div>
-  );
+  return <Navigate to="/login"></Navigate>;
 };
 
 export default PrivateRoute;
