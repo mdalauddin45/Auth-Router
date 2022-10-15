@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext, { AuthContext } from "../contexts/UserContext";
+import { AuthContext } from "../contexts/UserContext";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -11,6 +11,16 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        // Signed in
+        const user = result.user;
+        console.log("registration user", user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <div>
