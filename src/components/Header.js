@@ -28,9 +28,11 @@ const Header = () => {
           Register
         </Link>
         {user?.email && <span>Welcome, {user.email}</span>}
-        <button onClick={handleSignOut} className="btn btn-secondary ">
-          log out
-        </button>
+        {user?.email && (
+          <button onClick={handleSignOut} className="btn btn-secondary ">
+            log out
+          </button>
+        )}
       </div>
     </div>
   );
